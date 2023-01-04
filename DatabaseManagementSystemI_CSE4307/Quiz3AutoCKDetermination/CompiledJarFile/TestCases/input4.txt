@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+R(A,B,C,D)
+=======
+R(A,B,C,D)
+>>>>>>> dc744f9abaee5b79f7eaff5fce475cf294f6864e
+AB->CD,D->B,C->A

@@ -1,0 +1,11 @@
+alter table customer add Date_Of_Birth Date;
+alter table account modify balance number(12,2);
+alter table account drop constraint pk_account;
+alter table customer drop constraint pk_customer;
+alter table account rename column account_no to A_NO;
+alter table customer rename column customer_no to C_NO;
+alter table depositor rename to DEPOSITOR_INFO;
+alter table account add constraint pk_account primary key(A_NO);
+alter table customer add constraint pk_customer primary key(C_NO);
+alter table DEPOSITOR_INFO add constraint fk_depositor_account foreign key(account_no) references account(a_no);
+alter table DEPOSITOR_INFO add constraint fk_depositor_customer foreign key(customer_no) references customer(c_no);

@@ -1,0 +1,5 @@
+There are a total of 4 possible CKs. They are given below:
+CK1: AB
+CK2: AD
+CK3: CB
+CK4: CD

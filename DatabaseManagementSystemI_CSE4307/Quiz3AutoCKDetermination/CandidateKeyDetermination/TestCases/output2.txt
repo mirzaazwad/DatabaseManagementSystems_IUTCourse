@@ -1,0 +1,4 @@
+There are a total of 3 possible CKs. They are given below:
+CK1: AD
+CK2: BD
+CK3: CD
