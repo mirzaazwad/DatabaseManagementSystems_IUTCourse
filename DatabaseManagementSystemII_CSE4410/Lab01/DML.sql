@@ -9,7 +9,7 @@ SELECT * FROM (SELECT MenuName,count(MenuName)MenuCount FROM CustomerFoodOrder G
 
 --4--
 SELECT Customer.CustomerName FROM Customer,
-(SELECT CustomerCuisine.CustomerID,count(FranchiseMenu.FranchiseID) FROM CustomerCuisine,Menu,FranchiseMenu WHERE CustomerCuisine.Cuisine=Menu.Cuisine AND Menu.MenuName=FranchiseMenu.MenuName GROUP BY FranchiseMenu.FranchiseID,CustomerCuisine.CustomerID)Preference WHERE Preference.CustomerID=Customer.CustomerID;
+(SELECT CustomerCuisine.CustomerID,count(FranchiseMenu.FranchiseID)preferredFood FROM CustomerCuisine,Menu,FranchiseMenu WHERE CustomerCuisine.Cuisine=Menu.Cuisine AND Menu.MenuName=FranchiseMenu.MenuName GROUP BY FranchiseMenu.FranchiseID,CustomerCuisine.CustomerID)Preference WHERE Preference.CustomerID=Customer.CustomerID AND Preference.preferredFood>=2;
 
 --5--
 SELECT Customer.CustomerName FROM (SELECT CustomerID FROM Customer minus SELECT CustomerID FROM CustomerFoodOrder)Ordered,Customer WHERE Customer.CustomerID=Ordered.CustomerID;
