@@ -1,0 +1,2 @@
+ALTER TABLESPACE tbs1
+ADD DATAFILE 'tbs3_data . dbf ' SIZE 1m;

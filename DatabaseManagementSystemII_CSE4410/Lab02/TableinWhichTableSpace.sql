@@ -1,0 +1,1 @@
+SELECT tablespace_name FROM all_tables WHERE table_name='STUDENT' AND OWNER='SYSTEM';

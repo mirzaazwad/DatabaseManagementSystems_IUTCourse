@@ -1,0 +1,1 @@
+SELECT tablespace_name FROM all_tables WHERE tablespace_name='TBS1';
