@@ -1,3 +1,4 @@
+
 insert into AccountProperty values (1, 'Saving Account', 5, 30);
 insert into AccountProperty values (2, 'Current Account', 3, 0);
 insert into AccountProperty values (3, 'Fixed Deposit Account', 7, 90);
