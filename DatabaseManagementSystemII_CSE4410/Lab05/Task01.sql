@@ -1,0 +1,22 @@
+SET SERVEROUTPUT ON SIZE 1000000
+DROP SEQUENCE ACCOUNT_SEQ;
+CREATE SEQUENCE ACCOUNT_SEQ
+MINVALUE 100000
+MAXVALUE 999999
+START WITH 1000
+INCREMENT BY 1
+CACHE 100;
+
+CREATE OR REPLACE FUNCTION GetAccountID(Name IN Account.Name%TYPE,AccCode IN Account.AccCode%TYPE, OpeningDate IN Account.OpeningDate%TYPE) RETURN varchar2
+IS
+retstring varchar2(150);
+begin
+  retstring:=AccCode||TO_CHAR(OpeningDate,'YYYYMMDD')||'.'||SUBSTR(Name,0,3)||'.'||ACCOUNT_SEQ.NEXTVAL;
+  RETURN retstring;
+end;
+/
+
+begin
+  DBMS_OUTPUT.PUT_LINE(GetAccountID('Mirza',1,TO_DATE('2020-01-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+end;
+/
